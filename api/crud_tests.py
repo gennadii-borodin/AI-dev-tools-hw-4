@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from langchain_core.tools import tool
 
 # Путь к CSV‑файлу с тестами
 FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'tests', 'test_checklist.csv')
@@ -11,7 +12,7 @@ def _ensure_file_exists():
         df = pd.DataFrame(columns=['ID', 'Title', 'Description'])
         df.to_csv(FILE_PATH, index=False, header=True, encoding='utf-8')
 
-
+@tool
 def get_all_tests():
     """Возвращает список всех тестов в виде списка словарей."""
     _ensure_file_exists()
@@ -19,6 +20,7 @@ def get_all_tests():
     return df.to_dict(orient='records')
 
 
+@tool
 def get_test_by_id(test_id):
     """Возвращает тест по его ID или None, если не найден."""
     _ensure_file_exists()
@@ -26,7 +28,7 @@ def get_test_by_id(test_id):
     result = df[df['ID'] == str(test_id)]
     return result.iloc[0].to_dict() if not result.empty else None
 
-
+@tool
 def add_test(test_id, title, description):
     """Добавляет новый тест. При конфликте ID возбуждает ValueError."""
     _ensure_file_exists()
@@ -37,7 +39,7 @@ def add_test(test_id, title, description):
     df = pd.concat([df, new_row], ignore_index=True)
     df.to_csv(FILE_PATH, index=False, header=True, encoding='utf-8')
 
-
+@tool
 def update_test(test_id, new_title, new_description):
     """Обновляет тест с заданным ID."""
     _ensure_file_exists()
@@ -47,7 +49,7 @@ def update_test(test_id, new_title, new_description):
     df.loc[df['ID'] == test_id, ['Title', 'Description']] = new_title, new_description
     df.to_csv(FILE_PATH, index=False, header=True, encoding='utf-8')
 
-
+@tool
 def delete_test(test_id):
     """Удаляет тест с заданным ID."""
     _ensure_file_exists()
