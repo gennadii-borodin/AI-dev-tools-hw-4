@@ -1,0 +1,251 @@
+Requirement ID,Requirement,Test Case ID,Test Case Description,Expected Result
+1,Регистрация пользователя,TC001.1,"Verify user can register with valid email, password and personal data",User is successfully registered and redirected to account page
+1,Регистрация пользователя,TC001.2,"Verify registration fails with invalid email format",Error message is displayed and registration is not completed
+1,Регистрация пользователя,TC001.3,"Verify registration fails with weak password",Error message is displayed indicating password requirements
+1,Регистрация пользователя,TC001.4,"Verify registration fails when required fields are empty",Error message is displayed for each missing required field
+1,Регистрация пользователя,TC001.5,"Verify user cannot register with already existing email",Error message is displayed indicating email is already in use
+2,Авторизация пользователя,TC002.1,"Verify user can login with valid credentials",User is successfully logged in and redirected to home page
+2,Авторизация пользователя,TC002.2,"Verify login fails with invalid email",Error message is displayed indicating invalid credentials
+2,Авторизация пользователя,TC002.3,"Verify login fails with invalid password",Error message is displayed indicating invalid credentials
+2,Авторизация пользователя,TC002.4,"Verify login fails with empty credentials",Error message is displayed for each missing field
+2,Авторизация пользователя,TC002.5,"Verify 'Remember me' functionality works correctly",User stays logged in after browser restart
+3,Восстановление пароля,TC003.1,"Verify password recovery request with valid email",Recovery email is sent to user's email address
+3,Восстановление пароля,TC003.2,"Verify password recovery fails with non-existing email",Error message is displayed indicating email not found
+3,Восстановление пароля,TC003.3,"Verify password recovery fails with invalid email format",Error message is displayed indicating invalid email format
+3,Восстановление пароля,TC003.4,"Verify password reset with valid token and new password",Password is successfully changed and user can login
+3,Восстановление пароля,TC003.5,"Verify password reset fails with weak new password",Error message is displayed indicating password requirements
+4,Просмотр каталога товаров,TC004.1,"Verify user can view product catalog",Product catalog is displayed with all available products
+4,Просмотр каталога товаров,TC004.2,"Verify catalog displays correct number of products per page",Correct pagination is applied with default number of products
+4,Просмотр каталога товаров,TC004.3,"Verify catalog displays product images correctly",All products display their respective images
+4,Просмотр каталога товаров,TC004.4,"Verify catalog displays product prices correctly",All products display their respective prices
+4,Просмотр каталога товаров,TC004.5,"Verify catalog displays out-of-stock products with appropriate indicator",Out-of-stock products are marked accordingly
+5,Поиск товаров по имени,TC005.1,"Verify search returns correct results for exact product name",Search results contain only products matching the exact name
+5,Поиск товаров по имени,TC005.2,"Verify search returns correct results for partial product name",Search results contain products matching partial name
+5,Поиск товаров по имени,TC005.3,"Verify search returns no results for non-existing product name",Appropriate message is displayed for no results
+5,Поиск товаров по имени,TC005.4,"Verify search is case insensitive",Search results are returned regardless of case used
+5,Поиск товаров по имени,TC005.5,"Verify search handles special characters correctly",Search works correctly with special characters in product names
+6,Фильтрация товаров по категории,TC006.1,"Verify filtering by single category returns correct products",Only products from selected category are displayed
+6,Фильтрация товаров по категории,TC006.2,"Verify filtering by multiple categories works correctly",Products from all selected categories are displayed
+6,Фильтрация товаров по категории,TC006.3,"Verify filtering clears correctly when filter is removed",All products are displayed when filter is cleared
+6,Фильтрация товаров по категории,TC006.4,"Verify category filter shows correct product count",Each category displays the correct number of products
+6,Фильтрация товаров по категории,TC006.5,"Verify filtering works in combination with search",Filtered results are correctly narrowed by search term
+7,Сортировка товаров по цене,TC007.1,"Verify sorting products by price ascending works correctly",Products are displayed in ascending price order
+7,Сортировка товаров по цене,TC007.2,"Verify sorting products by price descending works correctly",Products are displayed in descending price order
+7,Сортировка товаров по цене,TC007.3,"Verify default sorting is applied correctly",Products are displayed in default order when no sort is selected
+7,Сортировка товаров по цене,TC007.4,"Verify sorting persists when navigating between pages",Sorting order remains the same when changing pages
+7,Сортировка товаров по цене,TC007.5,"Verify sorting works in combination with filtering",Products are sorted correctly within filtered results
+8,Добавление товара в корзину,TC008.1,"Verify user can add product to cart from product catalog",Product is successfully added to cart and cart count updates
+8,Добавление товара в корзину,TC008.2,"Verify user can add product to cart from product details page",Product is successfully added to cart and cart count updates
+8,Добавление товара в корзину,TC008.3,"Verify adding product with quantity works correctly",Specified quantity is added to cart
+8,Добавление товара в корзину,TC008.4,"Verify adding out-of-stock product is handled correctly",Appropriate message is displayed for out-of-stock products
+8,Добавление товара в корзину,TC008.5,"Verify adding same product multiple times updates quantity",Product quantity is updated rather than creating duplicate entries
+9,Просмотр содержимого корзины,TC009.1,"Verify cart displays all added products correctly",All products in cart are displayed with correct details
+9,Просмотр содержимого корзины,TC009.2,"Verify cart displays correct quantities for each product",Each product shows its correct quantity
+9,Просмотр содержимого корзины,TC009.3,"Verify cart displays correct total price",Cart shows correct total price for all items
+9,Просмотр содержимого корзины,TC009.4,"Verify cart displays correct price for each product",Each product shows its correct price
+9,Просмотр содержимого корзины,TC009.5,"Verify empty cart displays appropriate message",Appropriate message is displayed when cart is empty
+10,Обновление количества товара в корзине,TC010.1,"Verify user can increase product quantity in cart",Product quantity updates correctly and total price adjusts
+10,Обновление количества товара в корзине,TC010.2,"Verify user can decrease product quantity in cart",Product quantity updates correctly and total price adjusts
+10,Обновление количества товара в корзине,TC010.3,"Verify user can set product quantity to zero to remove item",Product is removed from cart when quantity set to zero
+10,Обновление количества товара в корзине,TC010.4,"Verify updating quantity beyond stock level is handled correctly",Appropriate message is displayed when quantity exceeds stock
+10,Обновление количества товара в корзине,TC010.5,"Verify cart total updates correctly when quantity changes",Cart total is recalculated correctly after quantity changes
+11,Удаление товара из корзины,TC011.1,"Verify user can remove single product from cart",Product is removed from cart and cart total updates
+11,Удаление товара из корзины,TC011.2,"Verify user can remove all products from cart",Cart is empty after removing all products
+11,Удаление товара из корзины,TC011.3,"Verify cart count updates correctly after removal",Cart icon count updates to reflect remaining items
+11,Удаление товара из корзины,TC011.4,"Verify removing last product from cart displays empty message",Appropriate message is displayed when cart becomes empty
+11,Удаление товара из корзины,TC011.5,"Verify removing product from cart updates total correctly",Cart total is recalculated correctly after removal
+12,Оформление заказа,TC012.1,"Verify user can proceed to checkout from cart",User is redirected to checkout page with cart contents
+12,Оформление заказа,TC012.10,"Verify user can complete checkout process with valid information",Order is successfully placed and confirmation is displayed
+12,Оформление заказа,TC012.3,"Verify checkout process requires user to be logged in",User is redirected to login page if not authenticated
+12,Оформление заказа,TC012.4,"Verify checkout displays correct order summary",Order summary shows all products with correct prices and quantities
+12,Оформление заказа,TC012.5,"Verify checkout process validates required fields",Error messages are displayed for missing required fields
+13,Выбор способа оплаты,TC013.1,"Verify all available payment methods are displayed",All configured payment methods are listed during checkout
+13,Выбор способа оплаты,TC013.2,"Verify user can select different payment methods",Selected payment method is correctly applied to order
+13,Выбор способа оплаты,TC013.3,"Verify payment method selection persists during checkout",Selected payment method remains selected when navigating back
+13,Выбор способа оплаты,TC013.4,"Verify payment method validation works correctly",Appropriate validation is applied based on selected payment method
+13,Выбор способа оплаты,TC013.5,"Verify unavailable payment methods are not displayed",Only available payment methods for user's location are shown
+14,Выбор способа доставки,TC014.1,"Verify all available delivery methods are displayed",All configured delivery methods are listed during checkout
+14,Выбор способа доставки,TC014.2,"Verify user can select different delivery methods",Selected delivery method is correctly applied to order
+14,Выбор способа доставки,TC014.3,"Verify delivery cost is calculated correctly",Delivery cost is added to order total correctly
+14,Выбор способа доставки,TC014.4,"Verify delivery method affects delivery time estimate",Estimated delivery time updates based on selected method
+14,Выбор способа доставки,TC014.5,"Verify delivery method validation works correctly",Appropriate validation is applied based on selected delivery method
+15,Ввод данных для доставки,TC015.1,"Verify delivery address form displays correctly",All required address fields are displayed
+15,Ввод данных для доставки,TC015.2,"Verify delivery address validation works correctly",Error messages are displayed for invalid address data
+15,Ввод данных для доставки,TC015.3,"Verify user can save delivery address for future use",Address is saved and available for future orders
+15,Ввод данных для доставки,TC015.4,"Verify user can select from saved addresses",Saved addresses are displayed and can be selected
+15,Ввод данных для доставки,TC015.5,"Verify delivery address is correctly associated with order",Entered address is correctly stored with order details
+16,Подтверждение заказа,TC016.1,"Verify order confirmation page displays correct information",Order details match what user entered during checkout
+16,Подтверждение заказа,TC016.2,"Verify order confirmation email is sent",Confirmation email is sent to user's email address
+16,Подтверждение заказа,TC016.3,"Verify order appears in user's order history",Order is visible in user's order history after confirmation
+16,Подтверждение заказа,TC016.4,"Verify inventory is updated after order confirmation",Product quantities are reduced in inventory
+16,Подтверждение заказа,TC016.5,"Verify payment is processed after order confirmation",Payment is processed and recorded in system
+17,Просмотр истории заказов,TC017.1,"Verify user can view their order history",All past orders are displayed in chronological order
+17,Просмотр истории заказов,TC017.2,"Verify order history displays correct order details",Each order shows correct products quantities and prices
+17,Просмотр истории заказов,TC017.3,"Verify order history displays correct order status",Each order shows its current status
+17,Просмотр истории заказов,TC017.4,"Verify user can view details of specific order",Detailed order information is displayed when order is selected
+17,Просмотр истории заказов,TC017.5,"Verify order history is only accessible to authenticated user",Order history requires user authentication
+18,Повторение предыдущего заказа,TC018.1,"Verify user can repeat previous order",All items from previous order are added to cart
+18,Повторение предыдущего заказа,TC018.2,"Verify repeated order contains correct quantities",Quantities match the original order
+18,Повторение предыдущего заказа,TC018.3,"Verify repeated order uses current product prices",Prices reflect current values not original order values
+18,Повторение предыдущего заказа,TC018.4,"Verify repeated order handles discontinued products",Appropriate handling for products no longer available
+18,Повторение предыдущего заказа,TC018.5,"Verify repeated order maintains separate from current cart items",Original cart items are not affected by repeat order
+19,Оставление отзыва о товаре,TC019.1,"Verify authenticated user can leave product review",Review form is accessible to logged in users
+19,Оставление отзыва о товаре,TC019.2,"Verify review requires rating selection",Error message is displayed if rating is not provided
+19,Оставление отзыва о товаре,TC019.3,"Verify review text has appropriate length validation",Error message is displayed for reviews outside length limits
+19,Оставление отзыва о товаре,TC019.4,"Verify user can only review products they purchased",Review option is only available for purchased products
+19,Оставление отзыва о товаре,TC019.5,"Verify submitted review appears on product page",Review is displayed on product page after submission
+20,Ставка оценки товару,TC020.1,"Verify user can rate product with star rating",Star rating is successfully submitted and saved
+20,Ставка оценки товару,TC020.2,"Verify rating updates product average rating",Product average rating is recalculated correctly
+20,Ставка оценки товару,TC020.3,"Verify user can only rate product once",User cannot submit multiple ratings for same product
+20,Ставка оценки товару,TC020.4,"Verify rating is only allowed for authenticated users",Rating requires user authentication
+20,Ставка оценки товару,TC020.5,"Verify rating is associated with user account",Rating is correctly linked to user who submitted it
+21,Получение рекомендаций товаров,TC021.1,"Verify product recommendations are displayed on homepage",Recommended products are shown to user
+21,Получение рекомендаций товаров,TC021.2,"Verify recommendations are personalized based on user history",Recommendations are relevant to user's browsing/purchase history
+21,Получение рекомендаций товаров,TC021.3,"Verify recommendations update based on user behavior",Recommendations change as user interacts with site
+21,Получение рекомендаций товаров,TC021.4,"Verify recommendations are displayed on product pages",Related products are shown on product detail pages
+21,Получение рекомендаций товаров,TC021.5,"Verify recommendation algorithm handles new users",Appropriate recommendations are shown to users with limited history
+22,Уведомление о статусе заказа (доставлено),TC022.1,"Verify user receives notification when order is shipped",Notification is sent when order status changes to shipped
+22,Уведомление о статусе заказа (доставлено),TC022.2,"Verify user receives notification when order is delivered",Notification is sent when order status changes to delivered
+22,Уведомление о статусе заказа (доставлено),TC022.3,"Verify notification contains tracking information",Notification includes tracking number when available
+22,Уведомление о статусе заказа (доставлено),TC022.4,"Verify notification contains order details",Notification includes relevant order information
+22,Уведомление о статусе заказа (доставлено),TC022.5,"Verify notification is sent to correct user",Notification is sent to email associated with order
+23,Управление аккаунтом (изменение пароля),TC023.1,"Verify user can change password with current password",Password is successfully changed when current password is correct
+23,Управление аккаунтом (изменение пароля),TC023.2,"Verify password change fails with incorrect current password",Error message is displayed for incorrect current password
+23,Управление аккаунтом (изменение пароля),TC023.3,"Verify new password meets security requirements",Error message is displayed for weak new passwords
+23,Управление аккаунтом (изменение пароля),TC023.4,"Verify user is logged out after password change",User must log in again with new password
+23,Управление аккаунтом (изменение пароля),TC023.5,"Verify password change sends confirmation email",Confirmation email is sent after successful password change
+24,Добавление адресов доставки,TC024.1,"Verify user can add new delivery address",Address is successfully saved to user's address book
+24,Добавление адресов доставки,TC024.2,"Verify address validation works correctly",Error messages are displayed for invalid address data
+24,Добавление адресов доставки,TC024.3,"Verify user can set default delivery address",Default address is correctly set and used for new orders
+24,Добавление адресов доставки,TC024.4,"Verify user can edit existing addresses",Address information is updated correctly
+24,Добавление адресов доставки,TC024.5,"Verify user can delete existing addresses",Address is removed from user's address book
+25,Управление избранным товарам,TC025.1,"Verify user can add product to favorites",Product is added to user's favorites list
+25,Управление избранным товарам,TC025.2,"Verify user can remove product from favorites",Product is removed from user's favorites list
+25,Управление избранным товарам,TC025.3,"Verify favorites list persists between sessions",Favorites remain after user logs out and back in
+25,Управление избранным товарам,TC025.4,"Verify favorites are associated with user account",Favorites are only accessible to account owner
+25,Управление избранным товарам,TC025.5,"Verify favorites list displays correct products",All favorited products are displayed in list
+26,Добавление товара в сравнение,TC026.1,"Verify user can add product to comparison list",Product is added to comparison list
+26,Добавление товара в сравнение,TC026.2,"Verify user can remove product from comparison list",Product is removed from comparison list
+26,Добавление товара в сравнение,TC026.3,"Verify comparison list has maximum limit",Appropriate message is displayed when trying to add too many products
+26,Добавление товара в сравнение,TC026.4,"Verify only comparable products can be added",Only products of same category can be compared
+26,Добавление товара в сравнение,TC026.5,"Verify comparison list persists during session",Comparison list remains while user navigates site
+27,Сравнение выбранных товаров,TC027.1,"Verify product comparison page displays correctly",All selected products are displayed in comparison table
+27,Сравнение выбранных товаров,TC027.2,"Verify comparison table shows key product attributes",Important product features are displayed for comparison
+27,Сравнение выбранных товаров,TC027.3,"Verify user can add/remove products from comparison",Products can be added or removed from comparison view
+27,Сравнение выбранных товаров,TC027.4,"Verify comparison works for products in same category",Only relevant attributes are compared for similar products
+27,Сравнение выбранных товаров,TC027.5,"Verify comparison page handles different screen sizes",Comparison table is responsive on different devices
+28,Просмотр деталей товара,TC028.1,"Verify product detail page displays all relevant information",Product name description price and images are displayed
+28,Просмотр деталей товара,TC028.2,"Verify product detail page shows correct stock status",Stock status is accurately displayed
+28,Просмотр деталей товара,TC028.3,"Verify product detail page shows related products",Related or recommended products are displayed
+28,Просмотр деталей товара,TC028.4,"Verify product images can be zoomed",Product images can be viewed in larger size
+28,Просмотр деталей товара,TC028.5,"Verify product detail page shows reviews and ratings",Product reviews and ratings are displayed
+29,Добавление комментариев к товару,TC029.1,"Verify authenticated user can add comment to product",Comment form is available to logged in users
+29,Добавление комментариев к товару,TC029.2,"Verify comment text has appropriate validation",Error messages are displayed for invalid comment text
+29,Добавление комментариев к товару,TC029.3,"Verify comments are displayed with user information",Comments show user name and timestamp
+29,Добавление комментариев к товару,TC029.4,"Verify user can reply to existing comments",Reply functionality works correctly
+29,Добавление комментариев к товару,TC029.5,"Verify comments are moderated appropriately",Comments follow moderation rules
+30,Рейтинг и отзывы пользователей,TC030.1,"Verify product rating is calculated correctly",Average rating is correctly calculated from user ratings
+30,Рейтинг и отзывы пользователей,TC030.2,"Verify reviews are displayed with ratings",Reviews show associated star ratings
+30,Рейтинг и отзывы пользователей,TC030.3,"Verify reviews can be sorted by different criteria",Reviews can be sorted by date rating etc.
+30,Рейтинг и отзывы пользователей,TC030.4,"Verify reviews are filtered by verified purchases",Option to show only verified purchase reviews works
+30,Рейтинг и отзывы пользователей,TC030.5,"Verify review statistics are displayed correctly",Review summary shows correct distribution of ratings
+31,Скидки и акции для пользователей,TC031.1,"Verify discount codes can be applied to orders",Discount is correctly applied when valid code is entered
+31,Скидки и акции для пользователей,TC031.2,"Verify discount code validation works correctly",Error messages are displayed for invalid codes
+31,Скидки и акции для пользователей,TC031.3,"Verify automatic discounts are applied correctly",System automatically applies eligible discounts
+31,Скидки и акции для пользователей,TC031.4,"Verify discount limits and restrictions work",Discount usage limits are correctly enforced
+31,Скидки и акции для пользователей,TC031.5,"Verify discount is correctly calculated in order total",Discount amount is correctly deducted from order total
+32,Уведомление о поступлении новых товаров,TC032.1,"Verify user can subscribe to product availability notifications",User is added to notification list for out-of-stock product
+32,Уведомление о поступлении новых товаров,TC032.2,"Verify notification is sent when product becomes available",Email is sent when product stock is replenished
+32,Уведомление о поступлении новых товаров,TC032.3,"Verify notification is only sent to subscribed users",Only users who requested notification receive email
+32,Уведомление о поступлении новых товаров,TC032.4,"Verify notification contains product information",Email includes details about the product now available
+32,Уведомление о поступлении новых товаров,TC032.5,"Verify notification subscription can be cancelled",User can unsubscribe from product notifications
+33,Интеграция с платежными системами,TC033.1,"Verify payments are processed through integrated payment gateways",Payments are successfully processed via integrated providers
+33,Интеграция с платежными системами,TC033.2,"Verify payment gateway handles declined transactions correctly",Appropriate error messages are displayed for declined payments
+33,Интеграция с платежными системами,TC033.3,"Verify payment information is securely transmitted",Payment data is properly encrypted during transmission
+33,Интеграция с платежными системами,TC033.4,"Verify payment gateway supports required payment methods",All required payment options are available
+33,Интеграция с платежными системами,TC033.5,"Verify payment gateway handles refunds correctly",Refund process works correctly through payment gateway
+34,Безопасность персональных данных,TC034.1,"Verify personal data is encrypted in database",Sensitive user information is stored encrypted
+34,Безопасность персональных данных,TC034.2,"Verify personal data is transmitted securely",Data is encrypted during transmission
+34,Безопасность персональных данных,TC034.3,"Verify access controls protect personal data",Only authorized personnel can access personal data
+34,Безопасность персональных данных,TC034.4,"Verify data retention policies are enforced",Personal data is deleted according to retention policies
+34,Безопасность персональных данных,TC034.5,"Verify compliance with data protection regulations",System meets applicable data protection requirements
+35,Подтверждение возраста пользователя (если требуется),TC035.1,"Verify age verification is required for age-restricted products",Age verification prompt appears for restricted products
+35,Подтверждение возраста пользователя (если требуется),TC035.2,"Verify user can successfully verify age",Access is granted after successful age verification
+35,Подтверждение возраста пользователя (если требуется),TC035.3,"Verify access is denied for underage users",Access is denied when user indicates they are underage
+35,Подтверждение возраста пользователя (если требуется),TC035.4,"Verify age verification persists during session",User is not repeatedly prompted for age during session
+35,Подтверждение возраста пользователя (если требуется),TC035.5,"Verify age verification is required for checkout of restricted products",Age verification is required before purchasing restricted items
+36,Управление подпиской на новостиletters,TC036.1,"Verify user can subscribe to newsletter",User is added to newsletter subscription list
+36,Управление подпиской на новостиletters,TC036.2,"Verify user can unsubscribe from newsletter",User is removed from newsletter subscription list
+36,Управление подпиской на новостиletters,TC036.3,"Verify newsletter subscription confirmation works",Confirmation email is sent for new subscriptions
+36,Управление подпиской на новостиletters,TC036.4,"Verify newsletter preferences can be managed",User can update newsletter preferences
+36,Управление подпиской на новостиletters,TC036.5,"Verify newsletter is only sent to subscribed users",Newsletter is not sent to unsubscribed users
+37,Отзывы о доставке,TC037.1,"Verify user can leave delivery feedback after order delivery",Delivery feedback form is available after order is delivered
+37,Отзывы о доставке,TC037.2,"Verify delivery feedback includes rating options",User can rate delivery experience
+37,Отзывы о доставке,TC037.3,"Verify delivery feedback is associated with delivery method",Feedback is linked to specific delivery service used
+37,Отзывы о доставке,TC037.4,"Verify delivery feedback is displayed appropriately",Delivery feedback is displayed in relevant sections
+37,Отзывы о доставке,TC037.5,"Verify delivery feedback can be responded to",Admins can respond to delivery feedback
+38,Оценка качества обслуживания,TC038.1,"Verify user can rate customer service quality",Customer service rating options are available
+38,Оценка качества обслуживания,TC038.2,"Verify service quality rating is collected at appropriate times",Rating requests appear at appropriate interaction points
+38,Оценка качества обслуживания,TC038.3,"Verify service quality rating is associated with service interaction",Rating is linked to specific service interaction
+38,Оценка качества обслуживания,TC038.4,"Verify service quality rating data is stored correctly",Rating data is properly stored for analysis
+38,Оценка качества обслуживания,TC038.5,"Verify service quality rating affects service improvements",Rating data is used to identify improvement areas
+39,Возврат средств,TC039.1,"Verify user can request refund for eligible orders",Refund request form is available for eligible orders
+39,Возврат средств,TC039.2,"Verify refund request validation works correctly",Only eligible orders can be refunded
+39,Возврат средств,TC039.3,"Verify refund amount is calculated correctly",Correct refund amount is determined based on order
+39,Возврат средств,TC039.4,"Verify refund status is updated correctly",Refund status is properly tracked in system
+39,Возврат средств,TC039.5,"Verify refund is processed through original payment method",Refund is sent to original payment method
+40,Отмена заказа до отгрузки,TC040.1,"Verify user can cancel order before shipping",Order can be cancelled when status is 'processing'
+40,Отмена заказа до отгрузки,TC040.2,"Verify order cancellation validation works correctly",Only cancellable orders can be cancelled
+40,Отмена заказа до отгрузки,TC040.3,"Verify inventory is restored after order cancellation",Product quantities are restored after cancellation
+40,Отмена заказа до отгрузки,TC040.4,"Verify user receives cancellation confirmation",User receives confirmation of order cancellation
+40,Отмена заказа до отгрузки,TC040.5,"Verify payment is refunded after order cancellation",Payment is refunded according to refund policy
+41,Отслеживание отправки заказа,TC041.1,"Verify shipment tracking information is available",Tracking number is accessible for shipped orders
+41,Отслеживание отправки заказа,TC041.2,"Verify tracking information updates correctly",Tracking status updates as package moves through delivery process
+41,Отслеживание отправки заказа,TC041.3,"Verify user can access tracking from order history",Tracking information is accessible from order details
+41,Отслеживание отправки заказа,TC041.4,"Verify tracking link works correctly",Tracking link opens carrier's tracking page
+41,Отслеживание отправки заказа,TC041.5,"Verify tracking notifications are sent",Tracking updates trigger notifications to user
+42,Уведомление о промокодовых скидках,TC042.1,"Verify promo code notifications are sent to users",Users receive notifications about available promo codes
+42,Уведомление о промокодовых скидках,TC042.2,"Verify promo code notification includes terms and conditions",Notification includes promo code terms
+42,Уведомление о промокодовых скидках,TC042.3,"Verify promo code can be applied from notification",Promo code works when applied from notification
+42,Уведомление о промокодовых скидках,TC042.4,"Verify promo code notification targets appropriate users",Promo codes are sent to eligible users
+42,Уведомление о промокодовых скидках,TC042.5,"Verify promo code expiration is handled correctly",Expired promo codes are not applied
+43,Персонализированные предложения,TC043.1,"Verify personalized offers are generated based on user behavior",Offers are relevant to user's browsing/purchase history
+43,Персонализированные предложения,TC043.2,"Verify personalized offers are displayed to correct users",Offers are only shown to eligible users
+43,Персонализированные предложения,TC043.3,"Verify personalized offer acceptance is tracked",User interactions with offers are recorded
+43,Персонализированные предложения,TC043.4,"Verify personalized offers have appropriate expiration",Offers expire according to defined terms
+43,Персонализированные предложения,TC043.5,"Verify personalized offers affect user engagement",Offer performance is tracked and measured
+44,Доступ к истории просмотров,TC044.1,"Verify user's browsing history is tracked correctly",Products viewed by user are recorded in history
+44,Доступ к истории просмотров,TC044.2,"Verify browsing history is associated with user account",History is linked to specific user account
+44,Доступ к истории просмотров,TC044.3,"Verify browsing history can be viewed by user",User can access their browsing history
+44,Доступ к истории просмотров,TC044.4,"Verify browsing history respects privacy settings",History tracking respects user privacy preferences
+44,Доступ к истории просмотров,TC044.5,"Verify browsing history is cleared when requested",User can clear their browsing history
+45,Управление предпочтениями товаров,TC045.1,"Verify user can set product preferences",User can specify preferred categories brands etc.
+45,Управление предпочтениями товаров,TC045.2,"Verify preferences affect product recommendations",Recommendations are influenced by user preferences
+45,Управление предпочтениями товаров,TC045.3,"Verify preferences can be updated",User can modify their preferences
+45,Управление предпочтениями товаров,TC045.4,"Verify preferences are saved between sessions",Preferences persist after user logs out
+45,Управление предпочтениями товаров,TC045.5,"Verify preferences affect email marketing content",Marketing emails are personalized based on preferences
+46,Загрузка отзывов и фото отзывов,TC046.1,"Verify user can upload photos with reviews",Photo upload functionality works with review submission
+46,Загрузка отзывов и фото отзывов,TC046.2,"Verify photo uploads have appropriate validation",File type and size restrictions are enforced
+46,Загрузка отзывов и фото отзывов,TC046.3,"Verify uploaded photos are displayed with reviews",Photos appear with associated reviews
+46,Загрузка отзывов и фото отзывов,TC046.4,"Verify photo uploads are secure",Uploaded files are properly secured
+46,Загрузка отзывов и фото отзывов,TC046.5,"Verify photo moderation works correctly",Uploaded photos are moderated before public display
+47,Система баллов за действия,TC047.1,"Verify points are awarded for eligible actions",Points are correctly awarded for defined actions
+47,Система баллов за действия,TC047.2,"Verify point balance is displayed correctly",User can view their current point balance
+47,Система баллов за действия,TC047.3,"Verify points can be redeemed for rewards",Point redemption functionality works correctly
+47,Система баллов за действия,TC047.4,"Verify point expiration is handled correctly",Expired points are properly deducted
+47,Система баллов за действия,TC047.5,"Verify point transactions are tracked",All point activities are recorded in user's history
+48,Возможность поделиться товаром в соцсетях,TC048.1,"Verify social sharing buttons are displayed on product pages",Social sharing options are available for products
+48,Возможность поделиться товаром в соцсетях,TC048.2,"Verify sharing works for major social networks",Sharing works correctly with major social platforms
+48,Возможность поделиться товаром в соцсетях,TC048.3,"Verify shared content includes product information",Shared content includes relevant product details
+48,Возможность поделиться товаром в соцсетях,TC048.4,"Verify sharing tracking works correctly",Social shares are tracked in analytics
+48,Возможность поделиться товаром в соцсетях,TC048.5,"Verify sharing functionality is responsive",Social sharing works on different device types
+49,Автоматическое заполнение адресов,TC049.1,"Verify address auto-complete works with user input",Address suggestions appear as user types
+49,Автоматическое заполнение адресов,TC049.2,"Verify auto-complete uses reliable address database",Address suggestions come from reliable source
+49,Автоматическое заполнение адресов,TC049.3,"Verify auto-complete handles international addresses",International addresses are supported
+49,Автоматическое заполнение адресов,TC049.4,"Verify auto-complete validation works correctly",Selected addresses are properly validated
+49,Автоматическое заполнение адресов,TC049.5,"Verify auto-complete improves checkout experience",Address auto-complete reduces checkout time
+50,Программа лояльности с бонусами,TC050.1,"Verify loyalty program benefits are correctly applied",Loyalty benefits are applied to eligible users
+50,Программа лояльности с бонусами,TC050.2,"Verify loyalty tier calculation works correctly",User's loyalty tier is calculated correctly
+50,Программа лояльности с бонусами,TC050.3,"Verify loyalty benefits are displayed to users",Users can see their loyalty benefits
+50,Программа лояльности с бонусами,TC050.4,"Verify loyalty point accumulation works correctly",Loyalty points are accumulated based on purchases
+50,Программа лояльности с бонусами,TC050.5,"Verify loyalty program enrollment works correctly",Users can enroll in loyalty program
