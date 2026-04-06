@@ -3,7 +3,7 @@ import pandas as pd
 from langchain_core.tools import tool
 
 # Путь к CSV‑файлу с тестами
-FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'tests', 'test_checklist.csv')
+FILE_PATH = os.path.join(os.path.dirname(__file__), '..', 'tests', 'test_checklist_ru.csv')
 
 
 def _ensure_file_exists():
